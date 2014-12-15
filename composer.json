@@ -1,6 +1,6 @@
 {
     "name": "akrabat/rka-slim-controller",
-    "description": "Dynamic controller classes for Slim Framework",
+    "description": "Dynamically instantiated controller classes for Slim Framework",
     "keywords": [
         "slim", "controller"
     ],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RkaSc": "RkaSc"
+            "RkaSc\\": "RkaSc"
         }
     }
 }
