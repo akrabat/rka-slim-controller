@@ -28,6 +28,7 @@ e.g.
 You can also register the controller with Slim's DI container:
 
     $app = new \RkaSc\Slim();
+
     $app->container->singleton('App\IndexController', function ($container) {
         // Retrieve any required dependencies from the container and
         // inject into the constructor of the controller
@@ -50,6 +51,7 @@ Hence, a typical controller may look like:
 
     class IndexController
     {
+        // Optional properties
         protected $app;
         protected $request;
         protected $response;
@@ -64,6 +66,7 @@ Hence, a typical controller may look like:
             echo "Hello, $name";
         }
 
+        // Optional setters
         public function setApp($app)
         {
             $this->app = $app;
