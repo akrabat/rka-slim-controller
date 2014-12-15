@@ -9,7 +9,7 @@ to inject dependencies as required.
 
 ## Installation
 
-    composer require rka/rka-slim-controller
+    composer require akrabat/rka-slim-controller
 
 [1]: http://www.slimframework.com/
 
@@ -79,3 +79,8 @@ Hence, a typical controller may look like:
             $this->response = $response;
         }
     }
+
+
+## Example project
+
+Look at [slim-di](https://github.com/akrabat/slim-di).
