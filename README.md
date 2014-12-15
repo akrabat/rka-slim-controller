@@ -1,7 +1,7 @@
 # RKA Slim Controller
 
 An extension to [Slim][1] that allows you use to dynamically instantiated
-controllers with action methods wherever you would use a currently callable.
+controllers with action methods wherever you would use a closure when routing.
 
 The controller can optionally be loaded from Slim's DI container, allowing you
 to inject dependencies as required.
@@ -50,6 +50,7 @@ Hence, a typical controller may look like:
 
     class IndexController
     {
+        protected $app;
         protected $request;
         protected $response;
 
@@ -61,6 +62,11 @@ Hence, a typical controller may look like:
         public function helloAction($name)
         {
             echo "Hello, $name";
+        }
+
+        public function setApp($app)
+        {
+            $this->app = $app;
         }
 
         public function setRequest($request)
