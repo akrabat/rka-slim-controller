@@ -24,7 +24,7 @@ class Slim extends \Slim\Slim
     public function mapRoute($args)
     {
         $callable = array_pop($args);
-        if (is_string($callable) && strpos($callable, ':')) {
+        if (is_string($callable) && substr_count($callable, ':', 1) == 1) {
             $callable = $this->createControllerClosure($callable);
         }
         $args[] = $callable;
