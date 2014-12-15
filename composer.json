@@ -1,0 +1,26 @@
+{
+    "name": "akrabat/rka-slim-controller",
+    "description": "Dynamic controller classes for Slim Framework",
+    "keywords": [
+        "slim", "controller"
+    ],
+    "homepage": "http://github.com/akrabat/rka-slim-controller",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Rob Allen",
+            "email": "rob@akrabat.com",
+            "homepage": "http://akrabat.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "slim/slim": "~2.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RkaSc": "RkaSc"
+        }
+    }
+}
