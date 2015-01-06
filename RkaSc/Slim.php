@@ -70,6 +70,12 @@ class Slim extends \Slim\Slim
                 $controller->setResponse($app->response);
             }
 
+            // Call init in case the controller wants to do something now that
+            // it has an app, request and response.
+            if (method_exists($controller, 'init')) {
+                $controller->init();
+            }
+
             return call_user_func_array(array($controller, $actionName), func_get_args());
         };
 
