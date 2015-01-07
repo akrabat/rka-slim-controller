@@ -3,10 +3,10 @@
  * Override of \Slim\Slim to add the ability to dynamically create a controller
  * and call an action method on it.
  *
- * Copyright 2014 Rob Allen (rob@akrabat.com).
+ * Copyright 2014-2015 Rob Allen (rob@akrabat.com).
  * License: New-BSD
  */
-namespace RkaSc;
+namespace RKA;
 
 class Slim extends \Slim\Slim
 {
@@ -59,7 +59,7 @@ class Slim extends \Slim\Slim
                 $controller = new $controllerName($app);
             }
 
-            // Set the App, request and response into the controller if we can
+            // Set the app, request and response into the controller if we can
             if (method_exists($controller, 'setApp')) {
                 $controller->setApp($app);
             }
