@@ -41,9 +41,9 @@ You can also register the controller with Slim's DI container:
 
 ## Controller class methods
 
-*RKA Slim Controller* will call the controller's `setApp()`, `setRequest()`
-and `setResponse()` methods if they exist and populate appropriately. It will
-then call the controller's `init()`` method.
+*RKA Slim Controller* will call the controller's `setApp()`, `setRequest()`,
+`setResponse()`, `setRouter()` and `setView()` methods if they exist and populate appropriately.
+It will then call the controller's `init()` method.
 
 Hence, a typical controller may look like:
 
@@ -56,6 +56,8 @@ Hence, a typical controller may look like:
         protected $app;
         protected $request;
         protected $response;
+        protected $router;
+        protected $view;
 
         public function index()
         {
@@ -82,11 +84,21 @@ Hence, a typical controller may look like:
         {
             $this->response = $response;
         }
+        
+        public function setRouter($router)
+        {
+            $this->router = $router;
+        }
+        
+        public function setView($view)
+        {
+            $this->view = $view;
+        }
 
         // Init
         public function init()
         {
-            // do things now that app, request and response are set.
+            // do things now that app, request, response, router and view are set.
         }
     }
 

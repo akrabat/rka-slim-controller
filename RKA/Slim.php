@@ -69,6 +69,12 @@ class Slim extends \Slim\Slim
             if (method_exists($controller, 'setResponse')) {
                 $controller->setResponse($app->response);
             }
+            if (method_exists($controller, 'setRouter')) {
+                $controller->setRouter($app->router);
+            }
+            if (method_exists($controller, 'setView')) {
+                $controller->setView($app->view);
+            }
 
             // Call init in case the controller wants to do something now that
             // it has an app, request and response.
